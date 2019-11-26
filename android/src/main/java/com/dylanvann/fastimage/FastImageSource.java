@@ -107,6 +107,11 @@ public class FastImageSource extends ImageSource {
     }
 
     public GlideUrl getGlideUrl() {
-        return new GlideUrl(getUri().toString(), getHeaders());
+         try{
+            return new GlideUrl(getUri().toString(), getHeaders());
+        }catch(Exception ex){
+            Log.d("Bitch Error",ex.toString());
+            return null;
+        }
     }
 }
